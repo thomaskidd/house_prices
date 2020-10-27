@@ -28,7 +28,17 @@ import numpy as np
 import pandas as pd
 import random
 
+# Custom libraries
+from data_prep import InputData
+
 #### Load and Clean Data
+
+train = InputData("data/train.csv")
+train.split_labels_and_features(["SalePrice"])
+
+# Print feature and label data
+print(train.features.head())
+print(train.labels.head())
 
 #### Build and Test Models
 
